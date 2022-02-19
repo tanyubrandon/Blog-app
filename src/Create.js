@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 
 const Create = () => {
 
      const [title,setTitle]=useState('');
      const [body,setBody]=useState('');
      const [author,setAuthor]=useState('brandon '); 
-     
+
+    const history=useHistory();
+
      const handleSubmit=(event)=>{
          event.preventDefault();
          const blog={title,body, author};
@@ -17,6 +20,7 @@ const Create = () => {
          })
          .then(()=>{
              console.log('new blog added.');
+             history.push('/');
          })
 
      };
@@ -29,7 +33,7 @@ const Create = () => {
                  type="text" 
                  required
                  value={title}
-                 onChange={(event)=>setTitle(event.target.value )}
+                 onChange={(event)=>setTitle(event.target.value)}
                  /> 
                 <label >Blog body:</label>
                 <textarea 
@@ -41,8 +45,10 @@ const Create = () => {
                  value={author}
                  onChange={(event)=>setAuthor(event.target.value)}
                  >
-                     <option value="brandon">brandon</option>
-                     <option value="tanyu">tanyu</option>
+                     <option value="Brandon">Brandon</option>
+                     <option value="Tanyu">Tanyu</option>
+                     <option value="Andrew">Andy</option>
+                     <option value="Cecilia">Cecy</option>
                  </select>
                  <button>Add-Blog</button>
                  <p>{title}</p>

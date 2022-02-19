@@ -70,7 +70,7 @@
   background: #f1356d;
   color: #fff;
   border: 0;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor:pointers
 }
 
@@ -107,4 +107,23 @@
   padding: 8px;
   border-radius: 6px;
   cursor: pointer;
+}
+
+/* 404 page */
+
+.not-found{
+  padding: 30px;
+  text-align:center;
+}
+
+.not-found a {
+  text-decoration: none;
+  display: flex;
+  
+  margin-top: 150px;
+}
+
+.not-found a:hover{
+
+  color: #f1356d;
 }
